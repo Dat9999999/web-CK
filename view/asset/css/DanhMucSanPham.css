@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Thiết lập vị trí của product-portfolio */
+.product-portfolio {
+  position: absolute;
+  top: 90px; /* Đặt khoảng cách từ top xuống */
+  left: 300px; /* Đặt khoảng cách từ left sang phải (tương ứng với độ rộng của sidebar) */
+  right: 0; /* Để product-portfolio nằm bên phải của trang */
+  bottom: 0; /* Để product-portfolio chiếm đầy toàn bộ chiều cao của trang */
+  overflow-y: auto; /* Bật thanh cuộn nếu nội dung vượt quá kích thước của product-portfolio */
+  padding: 0 20px; /* Thêm padding để tránh việc nội dung quá sát các cạnh */
+  background-color: #fcfcfc; /* Màu nền của product-portfolio */
+  margin-top: 100px;
+}
+
+.product-portfolio h2 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 100px; /* Khoảng cách phía dưới tiêu đề */
+}
+
+.product-portfolio-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Căn giữa các item-product */
+}
+.item {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 1px inset;
+}
+.item-product {
+  width: 300px; /* Độ rộng của mỗi item-product */
+  height: 300px; /* Chiều cao của mỗi item-product */
+  background-color: white;
+  color: aliceblue;
+  padding: 20px;
+  margin: 20px; /* Khoảng cách giữa các item-product */
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+.item .infor {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.item .infor h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.item .infor button {
+  padding: 15px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.7s;
+  background-color: #294031;
+}
+.item .infor button:hover {
+  background-color: #142118;
+  scale: 1.05;
+}
+.item .infor button a {
+  text-decoration: none;
+  color: white;
+}
+.item .infor p {
+  font-size: 20px;
+}
+.item-product {
+  transition: 0.7s;
+  cursor: pointer;
+}
+.item-product:hover {
+  scale: 1.1;
+}
+.item .infor p {
+  margin: 10px;
+  padding: 7px;
+  border-radius: 10px;
+  color: white;
+  background-color: #294031;
+}

@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.staff {
+  position: absolute;
+  display: flex;
+  left: 400px;
+  top: 150px;
+}
+.staff h2 {
+  font-size: 40px;
+  padding: 10px;
+  text-align: center;
+  width: 500px;
+}
+.staff .staff-header {
+  position: absolute;
+  top: 70px;
+  width: 1800px;
+  max-height: min-content;
+  border-style: groove;
+}
+
+.staff .staff-header .staff-item {
+  color: grey;
+}
+.staff .input_search {
+  width: 600px;
+  max-width: 600px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  box-shadow: 0px 0px 20px -18px;
+  background-color: white;
+  margin: 30px 10px 30px 0;
+  color: #142118;
+  font-size: 20px;
+}
+
+.staff .input_search:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+.staff .input_search::placeholder {
+  color: gray;
+  font-size: 18px;
+}
+
+.staff .input_search:focus {
+  border: 2px solid grey;
+}
+.staff label {
+  font-size: 25px;
+  margin: 10px 10px 10px 70px;
+}
+.staff .staff-button {
+  background-color: #294031;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  width: 130px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.staff .staff-button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.staff .staff-btnadd {
+  background-color: #294031;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+  font-size: 20px;
+  margin-left: 50px;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.staff .staff-btnadd:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.staff .staff-list {
+  width: 98%;
+  margin: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  border-collapse: collapse; /* Gộp đường viền của các ô trong bảng */
+}
+
+.staff .staff-list th,
+.staff .staff-list td {
+  text-align: center; /* Căn giữa nội dung của các ô và tiêu đề */
+  padding: 12px; /* Đặt khoảng cách giữa nội dung và đường viền của ô */
+  border: 1px solid lightgrey; /* Đặt đường viền cho các ô */
+}
+
+.staff .staff-list th {
+  background-color: #294031; /* Màu nền cho các tiêu đề */
+  color: white; /* Màu chữ cho các tiêu đề */
+}
+
+.staff .staff-list tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Đặt màu nền xen kẽ cho các hàng chẵn */
+}
+
+.staff .staff-list tbody tr:hover {
+  background-color: #ddd; /* Đổi màu nền khi di chuột qua các hàng */
+}
+
+.staff .staff-list td {
+  vertical-align: middle; /* Căn nội dung của ô theo chiều dọc */
+}
+.staff .staff-list #brands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.staff .staff-list .staff__img {
+  width: 60px;
+  height: 60px;
+  margin-left: 100px;
+}
+.staff-info {
+  display: flex;
+  align-items: center;
+}
+
+.staff__img {
+  width: 50px; /* Thiết lập kích thước ảnh */
+  height: auto; /* Cho phép chiều cao tự động tính toán */
+  margin-right: 10px; /* Khoảng cách giữa ảnh và tên sản phẩm */
+}
+
+.staff .add-sta.staff-form {
+  text-align: center;
+  margin: 20px;
+}
+.staff .add-sta.staff-form input {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.staff .add-sta.staff-form label {
+  font-size: 40px;
+  font-weight: bold;
+}
+.staff .add-sta.staff-form button {
+  padding: 10px;
+  border: none;
+  background-color: #294031;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.staff .add-sta.staff-form button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.staff .add-sta.staff-form .staff .add-sta.staff-form #addsta .staffForm {
+  text-align: center;
+}
+.add-sta.staff-form {
+  display: none;
+}

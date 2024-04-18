@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.product {
+  position: absolute;
+  display: flex;
+  left: 400px;
+  top: 150px;
+}
+.product h2 {
+  font-size: 40px;
+  padding: 10px;
+  text-align: center;
+  width: 500px;
+}
+.product .product-header {
+  position: absolute;
+  top: 70px;
+  width: 1800px;
+  max-height: min-content;
+  border-style: groove;
+}
+
+.product .product-header .product-item {
+  color: grey;
+}
+.product .input_search {
+  width: 600px;
+  max-width: 600px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  box-shadow: 0px 0px 20px -18px;
+  background-color: white;
+  margin: 30px 10px 30px 0;
+  color: #142118;
+  font-size: 20px;
+}
+
+.product .input_search:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+.product .input_search::placeholder {
+  color: gray;
+  font-size: 18px;
+}
+
+.product .input_search:focus {
+  border: 2px solid grey;
+}
+.product label {
+  font-size: 25px;
+  margin: 10px 10px 10px 70px;
+}
+.product select {
+  width: 200px;
+  max-width: 300px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  background-color: white;
+  margin: 30px 10px 10px 0;
+  font-size: 20px;
+  color: grey;
+}
+.product select option {
+  color: grey;
+  font-size: 18px;
+}
+.product .product-button {
+  background-color: #294031;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  width: 130px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.7s;
+}
+.product .product-button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.product .product-btnadd {
+  background-color: #294031;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+  font-size: 20px;
+  margin-left: 50px;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.product .product-btnadd:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.product .product-list {
+  width: 98%;
+  margin: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  border-collapse: collapse; /* Gộp đường viền của các ô trong bảng */
+}
+
+.product .product-list th,
+.product .product-list td {
+  text-align: center; /* Căn giữa nội dung của các ô và tiêu đề */
+  padding: 12px; /* Đặt khoảng cách giữa nội dung và đường viền của ô */
+  border: 1px solid lightgrey; /* Đặt đường viền cho các ô */
+}
+
+.product .product-list th {
+  background-color: #294031; /* Màu nền cho các tiêu đề */
+  color: white; /* Màu chữ cho các tiêu đề */
+}
+
+.product .product-list tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Đặt màu nền xen kẽ cho các hàng chẵn */
+}
+
+.product .product-list tbody tr:hover {
+  background-color: #ddd; /* Đổi màu nền khi di chuột qua các hàng */
+}
+
+.product .product-list td {
+  vertical-align: middle; /* Căn nội dung của ô theo chiều dọc */
+}
+.product .product-list #brands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product .product-list .product__img {
+  width: 60px;
+  height: 60px;
+  margin-left: 100px;
+}
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product__img {
+  width: 50px; /* Thiết lập kích thước ảnh */
+  height: auto; /* Cho phép chiều cao tự động tính toán */
+  margin-right: 10px; /* Khoảng cách giữa ảnh và tên sản phẩm */
+}
+
+.product .add-product-form {
+  text-align: center;
+  margin: 20px;
+}
+.product .add-product-form input {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.product .add-product-form label {
+  font-size: 40px;
+  font-weight: bold;
+}
+.product .add-product-form button {
+  padding: 10px;
+  border: none;
+  background-color: #294031;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.product .add-product-form button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.product .add-product-form .product .add-product-form #addProductForm {
+  text-align: center;
+}
+.add-product-form {
+  display: none;
+}
+
+.product .edit-product-form {
+  text-align: center;
+  margin: 20px;
+}
+.product .edit-product-form input {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.product .edit-product-form label {
+  font-size: 40px;
+  font-weight: bold;
+}
+.product .edit-product-form button {
+  padding: 10px;
+  border: none;
+  background-color: #294031;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.product .edit-product-form button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.product .edit-product-form .product .edit-product-form #editProductForm {
+  text-align: center;
+}
+.edit-product-form {
+  display: none;
+}
+.product-list-body .action-cell .edit-button {
+  padding: 10px;
+  margin: 5px;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.product-list-body .action-cell .edit-button:hover {
+  background-color: rgb(61, 55, 55);
+  color: white;
+  scale: 1.005;
+}
+.product-list-body .action-cell .delete-button {
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(172, 28, 28);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.product-list-body .action-cell .delete-button:hover {
+  background-color: rgb(98, 46, 46);
+  color: white;
+  scale: 1.005;
+}
