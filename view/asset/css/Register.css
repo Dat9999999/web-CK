@@ -3,10 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Times New Roman", Times, serif;
   background-color: #bfccd4;
 }
+
 .header {
   background-color: #294031;
   width: 100%;
@@ -14,17 +16,19 @@ body {
   padding: 20px;
   display: flex;
 }
+
 .header h1 {
   font-size: 40px;
   margin: 0 0 0 100px;
   color: white;
 }
+
 .container {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 35%;
-  max-width: 600px;
-  height: 550px;
+  max-width: 500px;
+  height: 500px;
   background: #f8f9fd;
   background: linear-gradient(
     0deg,
@@ -34,7 +38,7 @@ body {
   border-radius: 40px;
   padding: 25px 35px;
   border: 5px solid rgb(255, 255, 255);
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 30px 30px -20px;
   margin: 20px;
 }
 
@@ -50,7 +54,7 @@ body {
 }
 
 .form .input {
-  width: 500px;
+  width: 430px;
   height: 60px;
   background: white;
   border: none;
@@ -60,6 +64,7 @@ body {
   box-shadow: #cff0ff 0px 10px 10px -5px;
   border-inline: 2px solid transparent;
 }
+
 .form .input::-moz-placeholder {
   color: rgb(170, 170, 170);
 }
@@ -90,13 +95,13 @@ body {
 
 .form .login-button {
   display: block;
-  width: 500px;
+  width: 430px;
   font-weight: bold;
   background: linear-gradient(45deg, #294031 0%, rgb(18, 177, 209) 100%);
   color: white;
   padding-block: 15px;
-  margin: 20px auto;
   border-radius: 20px;
+  margin-top: 10px;
   box-shadow: #294031 #294031 0px 20px 10px -15px;
   border: none;
   transition: all 0.2s ease-in-out;
@@ -107,20 +112,22 @@ body {
 
 .form .login-button:hover {
   transform: scale(1.03);
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 23px 10px -20px;
 }
 
 .form .login-button:active {
   transform: scale(0.95);
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 15px 10px -10px;
 }
 
 .social-account-container {
   margin-top: 25px;
 }
+
 .social-account-container .svg {
   cursor: pointer;
 }
+
 .social-account-container .title {
   display: block;
   text-align: center;
@@ -147,7 +154,7 @@ body {
   aspect-ratio: 1;
   display: grid;
   place-content: center;
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 12px 10px -8px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -180,12 +187,61 @@ body {
   cursor: pointer;
   padding-block: 15px;
 }
+
 .register-button:hover {
   transform: scale(1.03);
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 23px 10px -20px;
 }
 
 .register-button:active {
   transform: scale(0.95);
-  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  box-shadow: rgba(133, 189, 215, 0.878) 0px 15px 10px -10px;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  position: relative;
+  max-width: 300px;
+  padding: 15px;
+  margin-left: 1200px;
+  border-radius: 8px;
+  background-color: #b0d0bb;
+  color: black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: slideInRight ease 0.3s ease-in-out, fadeOut 1s ease-in;
+  margin-top: 15px;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast-stick {
+  margin-right: 10px;
+}
+
+.toast-close {
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  top: 35px;
 }

@@ -351,7 +351,6 @@ document.addEventListener("DOMContentLoaded", function () {
     editButton.classList.add("edit-button");
     editButton.addEventListener("click", function () {
       document.getElementById("editProductForm").style.display = "block";
-      document.getElementById("editImgUrl").value = product.img_path;
       document.getElementById("editProductName").value = product.product;
       document.getElementById("editPrice").value = product.price;
       document.getElementById("editBrand").value = product.brands;
@@ -379,26 +378,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return row;
   }
+
   // Lắng nghe sự kiện submit form sửa sản phẩm
   document
     .getElementById("editProductForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
-
       const editedProduct = {
-        img_path: document.getElementById("editImgUrl").value.trim(),
         product: document.getElementById("editProductName").value.trim(),
         price: document.getElementById("editPrice").value.trim(),
         brands: document.getElementById("editBrand").value.trim(),
       };
 
-      updateProduct(editedProduct); // Cập nhật thông tin sản phẩm
-
-      displayProducts(listProduct.list1); // Hiển thị lại danh sách sản phẩm
-
+      updateProduct(editedProduct);
+      displayProducts(listProduct.list1);
       document.getElementById("editProductForm").style.display = "none"; // Ẩn form sau khi sửa thành công
     });
-  // Hủy sửa sản phẩm
   document
     .getElementById("editProductForm")
     .addEventListener("Close", function (event) {
@@ -433,7 +428,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return matchesSearchText && matchesBrand;
       });
     }
-
     displayProducts(filteredProducts);
 
     if (filteredProducts.length === 0) {
@@ -453,25 +447,4 @@ document.addEventListener("DOMContentLoaded", function () {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-  function CountProduct(listProduct) {
-    let countip = 0;
-    let countss = 0;
-    let countop = 0;
-    let countvv = 0;
-
-    for (let i = 0; i < listProduct.list1.length; i++) {
-      if (listProduct.list1[i].brands === "Iphone") {
-        countip += listProduct.list1[i].quantity;
-      } else if (listProduct.list1[i].brands === "SamSung") {
-        countss += listProduct.list1[i].quantity;
-      } else if (listProduct.list1[i].brands === "Oppo") {
-        countop += listProduct.list1[i].quantity;
-      } else {
-        countvv += listProduct.list1[i].quantity;
-      }
-    }
-
-    return countss; // Trả về số lượng Samsung
-  }
-  CountProduct();
 });

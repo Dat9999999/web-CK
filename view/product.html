@@ -24,7 +24,7 @@
         <div class="menu">
           <div class="menu-item" id="home">
             <i class="fa-solid fa-house"></i>
-            Trang Chủ
+            Tổng Quan
           </div>
           <div class="sub-menu-container" id="donhang-submenu"></div>
           <div class="menu-item" id="sanpham">
@@ -53,37 +53,9 @@
         <div class="title">
           <h1>Danh sách sản phẩm</h1>
         </div>
-        <div class="input-wrapper">
-          <button class="icon">
-            <svg
-              width="25px"
-              height="25px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M22 22L20 20"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-          <input type="text" name="text" class="input" placeholder="search.." />
-        </div>
 
         <div class="button">
           <button>Đăng Nhập</button>
-          <button>Đăng Kí</button>
         </div>
       </div>
       <!-- Nội dung trang chủ -->
@@ -114,23 +86,56 @@
         <button class="product-btnadd">
           <i class="fa-solid fa-circle-plus" onclick=""></i> Thêm Sản Phẩm
         </button>
-        <form id="addProductForm" class="add-product-form">
-          <label for="">Thêm Sản Phẩm</label><br />
-          <input type="text" id="imgUrl" placeholder="Image URL" />
-          <input type="text" id="productName" placeholder="Product Name" />
-          <input type="text" id="price" placeholder="Price" />
-          <input type="text" id="brandInput" placeholder="Brand" />
-          <button type="submit">Add Product</button>
-        </form>
-        <form id="editProductForm" class="edit-product-form">
-          <label for="">Sửa Sản Phẩm</label><br />
-          <input type="text" id="editImgUrl" placeholder="Image URL" />
-          <input type="text" id="editProductName" placeholder="Product Name" />
-          <input type="text" id="editPrice" placeholder="Price" />
-          <input type="text" id="editBrand" placeholder="Brand" />
-          <button type="submit">Sửa</button>
-          <button type="Close">Hủy</button>
-        </form>
+        <div class="form-addPro">
+          <form id="addProductForm" class="add-product-form">
+            <label for="title" class="title">Thêm Sản Phẩm</label><br />
+            <div class="input1">
+              <label for="Img">Thêm Hình ảnh: </label>
+              <input type="file" id="imgUrl" placeholder="Image URL" /><br />
+            </div>
+            <div class="input1">
+              <label for="Img">Thêm Tên Sản Phẩm: </label>
+              <input
+                type="text"
+                id="productName"
+                placeholder="Product Name"
+              /><br />
+            </div>
+            <div class="input1">
+              <label for="Img">Giá: </label>
+              <input type="text" id="price" placeholder="Price" /><br />
+            </div>
+            <div class="input1">
+              <label for="Img">Thương hiệu: </label>
+              <input type="text" id="brandInput" placeholder="Brand" /><br />
+            </div>
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="form-editPro">
+          <form id="editProductForm" class="edit-product-form">
+            <label for="">Sửa Sản Phẩm</label><br />
+            <input type="file" id="editImgUrl" placeholder="Image URL" />
+            <img
+              id="editPreviewImage"
+              src="#"
+              alt="Preview Image"
+              style="max-width: 200px; max-height: 200px; display: none"
+            />
+            <input
+              type="text"
+              id="editProductName"
+              placeholder="Product Name"
+            />
+            <input type="text" id="editPrice" placeholder="Price" />
+            <input type="text" id="editBrand" placeholder="Brand" />
+            <button type="submit">Sửa</button>
+            <button type="Close">Hủy</button>
+          </form>
+        </div>
+
         <table class="product-list">
           <thead>
             <tr>

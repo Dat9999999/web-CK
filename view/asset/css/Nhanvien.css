@@ -6,31 +6,41 @@
 .staff {
   position: absolute;
   display: flex;
-  left: 400px;
+  left: 200px;
   top: 150px;
 }
 .staff h2 {
-  font-size: 40px;
+  font-size: 30px;
   padding: 10px;
   text-align: center;
   width: 500px;
 }
+.staff #clock {
+  font-size: 40px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  border-radius: 50px;
+  background-color: #294031;
+  color: white;
+}
 .staff .staff-header {
   position: absolute;
   top: 70px;
-  width: 1800px;
+  width: 1280px;
   max-height: min-content;
   border-style: groove;
 }
 
 .staff .staff-header .staff-item {
   color: grey;
+  font-size: 20px;
 }
 .staff .input_search {
   width: 600px;
   max-width: 600px;
   height: 45px;
-  padding: 12px;
+  padding: 7px;
   border-radius: 12px;
   border: 1.5px solid lightgrey;
   outline: none;
@@ -38,7 +48,6 @@
   background-color: white;
   margin: 30px 10px 30px 0;
   color: #142118;
-  font-size: 20px;
 }
 
 .staff .input_search:hover {
@@ -47,7 +56,6 @@
 }
 .staff .input_search::placeholder {
   color: gray;
-  font-size: 18px;
 }
 
 .staff .input_search:focus {
@@ -55,18 +63,19 @@
 }
 .staff label {
   font-size: 25px;
-  margin: 10px 10px 10px 70px;
+  margin: 10px 10px 10px 30px;
 }
 .staff .staff-button {
   background-color: #294031;
   color: white;
-  padding: 12px;
+  padding: 7px;
   border-radius: 5px;
   border: none;
-  width: 130px;
-  font-size: 20px;
+  width: 100px;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.7s;
+  margin-left: 100px;
 }
 .staff .staff-button:hover {
   background-color: #142118;
@@ -76,11 +85,11 @@
 .staff .staff-btnadd {
   background-color: #294031;
   color: white;
-  padding: 12px;
+  padding: 7px;
   border-radius: 5px;
   border: none;
-  width: 250px;
-  font-size: 20px;
+  width: 200px;
+  font-size: 15px;
   margin-left: 50px;
   cursor: pointer;
   transition: 0.7s;
@@ -143,37 +152,92 @@
   margin-right: 10px; /* Khoảng cách giữa ảnh và tên sản phẩm */
 }
 
-.staff .add-sta.staff-form {
+.staff .add-staff-form {
   text-align: center;
   margin: 20px;
 }
-.staff .add-sta.staff-form input {
+.staff .add-staff-form input {
   border: 1px solid grey;
   padding: 10px;
   border-radius: 5px;
   margin-top: 20px;
+  font-size: 20px;
 }
-.staff .add-sta.staff-form label {
+.staff .add-staff-form label {
   font-size: 40px;
   font-weight: bold;
 }
-.staff .add-sta.staff-form button {
-  padding: 10px;
+.staff .add-staff-form button {
+  padding: 20px;
   border: none;
   background-color: #294031;
   color: white;
   cursor: pointer;
   transition: 0.7s;
+  border-radius: 10px;
 }
 
-.staff .add-sta.staff-form button:hover {
+.staff .add-staff-form button:hover {
   background-color: #142118;
   color: white;
   scale: 1.1;
 }
-.staff .add-sta.staff-form .staff .add-sta.staff-form #addsta .staffForm {
+.staff .add-staff-form .staff .add-staff-form #addsta .staffForm {
   text-align: center;
 }
-.add-sta.staff-form {
+.add-staff-form {
   display: none;
+}
+.edit-staff-form {
+  text-align: center;
+  margin: 20px;
+}
+.edit-staff-form {
+  display: none;
+}
+.edit-staff-form input {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.edit-staff-form label {
+  font-size: 40px;
+  font-weight: bold;
+}
+.edit-staff-form .button {
+  padding: 20px;
+  border: none;
+  background-color: #294031;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s;
+  border-radius: 10px;
+}
+.edit-staff-form button:hover {
+  background-color: #142118;
+  color: white;
+  scale: 1.1;
+}
+.staff-list-body .action-cell button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+}
+.staff-list-body .action-cell button:hover {
+  scale: 1.1;
+}
+.staff-list-body .action-cell .delete-button {
+  background-color: red;
+}
+
+.staff-list-body .action-cell .edit-button {
+  background-color: #294031;
+}
+.staff-list-body .action-cell .detail-button {
+  color: #142118;
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="./asset/css/Register.css" />
     <link
       rel="stylesheet"
@@ -18,21 +17,19 @@
   <body>
     <div class="login">
       <div class="header">
-        <h1><i class="fa-brands fa-phoenix-squadron"></i> Đăng Ký</h1>
+        <h1><i class="fab fa-phoenix-squadron"></i> Đăng Ký</h1>
       </div>
       <div class="container">
         <div class="heading">Đăng Ký</div>
-        <form action="" class="form">
+        <form action="#" class="form" id="register-form">
           <input
-            required=""
             class="input"
             type="text"
-            name="text"
-            id="text"
+            name="username"
+            id="username"
             placeholder="Tài Khoản"
           />
           <input
-            required=""
             class="input"
             type="password"
             name="password"
@@ -40,11 +37,10 @@
             placeholder="Mật khẩu"
           />
           <input
-            required=""
             class="input"
-            type="re-password"
-            name="re-password"
-            id="re-password"
+            type="password"
+            name="repassword"
+            id="repassword"
             placeholder="Xác nhận lại mật khẩu"
           />
           <input class="login-button" type="submit" value="Đăng Ký" />
@@ -91,6 +87,8 @@
           </div>
         </div>
       </div>
+      <div class="toast-container"></div>
     </div>
   </body>
+  <script src="./asset/js/Regisrer.js"></script>
 </html>

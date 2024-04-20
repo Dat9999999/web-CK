@@ -44,6 +44,7 @@ function getImageUrl(brand) {
       return "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/e/0/e061bd2ab13b5e2263236cb206248daa_1_2.png";
   }
 }
+
 // Gọi hàm CountProduct để tính toán và cập nhật số lượng ban đầu khi tải trang
 // Gọi hàm updateProductCounts để cập nhật nội dung ban đầu
 updateProductCounts();

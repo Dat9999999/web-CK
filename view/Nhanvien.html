@@ -24,7 +24,7 @@
         <div class="menu">
           <div class="menu-item" id="home">
             <i class="fa-solid fa-house"></i>
-            Trang Chủ
+            Tổng Quan
           </div>
           <div class="menu-item" id="sanpham">
             <i class="fas fa-cube"></i> Sản Phẩm
@@ -54,37 +54,9 @@
         <div class="title">
           <h1>Quản Lý Nhân Viên</h1>
         </div>
-        <div class="input-wrapper">
-          <button class="icon">
-            <svg
-              width="25px"
-              height="25px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M22 22L20 20"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-          <input type="text" name="text" class="input" placeholder="search.." />
-        </div>
 
         <div class="button">
           <button>Đăng Nhập</button>
-          <button>Đăng Kí</button>
         </div>
       </div>
       <!-- Nội dung trang chủ -->
@@ -93,6 +65,7 @@
     <!-- ------------->
     <div class="staff">
       <h2>Danh sách nhân viên</h2>
+
       <div class="staff-header">
         <label class="staff-item">Tìm Kiếm:</label>
         <input
@@ -105,11 +78,22 @@
         <button class="staff-btnadd">Thêm Nhân Viên</button>
         <form id="addstaffForm" class="add-staff-form">
           <label for="">Thêm Nhân Viên</label><br />
+          <input type="file" id="imgUrl" />
           <input type="text" id="Name" placeholder="Name" />
           <input type="text" id="Country" placeholder="Country" />
           <input type="text" id="Position" placeholder="Position" />
           <input type="text" id="Age" placeholder="Age" />
-          <button type="submit" onclick="addStaff()">Add staff</button>
+          <button type="submit">Thêm Nhân Viên</button>
+        </form>
+        <form id="editStaffForm" class="edit-staff-form">
+          <label for="">Sửa nhân viên</label><br />
+          <input type="file" id="imgUrl" />
+
+          <input type="text" id="EditName" placeholder="Tên" />
+          <input type="text" id="EditCountry" placeholder="Quê quán" />
+          <input type="text" id="EditPosition" placeholder="Chức vụ" />
+          <input type="text" id="EditAge" placeholder="Tuổi" />
+          <button type="submit">Lưu</button>
         </form>
 
         <table class="staff-list">
@@ -120,9 +104,10 @@
               <th>Chức Vụ</th>
               <th>Tuổi</th>
               <th>Ngày bắt đầu làm</th>
+              <th>Thêm</th>
             </tr>
           </thead>
-          <tbody class="staff-list-body"></tbody>
+          <tbody class="staff-list-body" id="staffListBody"></tbody>
         </table>
       </div>
     </div>

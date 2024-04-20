@@ -6,35 +6,84 @@
 /* Thiết lập vị trí của product-portfolio */
 .product-portfolio {
   position: absolute;
-  top: 90px; /* Đặt khoảng cách từ top xuống */
-  left: 300px; /* Đặt khoảng cách từ left sang phải (tương ứng với độ rộng của sidebar) */
-  right: 0; /* Để product-portfolio nằm bên phải của trang */
-  bottom: 0; /* Để product-portfolio chiếm đầy toàn bộ chiều cao của trang */
-  overflow-y: auto; /* Bật thanh cuộn nếu nội dung vượt quá kích thước của product-portfolio */
-  padding: 0 20px; /* Thêm padding để tránh việc nội dung quá sát các cạnh */
+  right: 0;
+  top: 100px;
+  left: 170px; /* Đặt khoảng cách từ left sang phải (tương ứng với độ rộng của sidebar) */
   background-color: #fcfcfc; /* Màu nền của product-portfolio */
-  margin-top: 100px;
 }
-
-.product-portfolio h2 {
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 100px; /* Khoảng cách phía dưới tiêu đề */
+.product-portfolio-title {
+  position: absolute;
+  top: 70px;
+  left: 35%;
+  font-size: 25px;
 }
-
 .product-portfolio-detail {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Căn giữa các item-product */
+  margin-top: 100px;
 }
+.product-portfolio-infor {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Căn giữa các item-product */
+  left: 15%;
+  top: 150px;
+}
+.product-portfolio-infor .inforNew {
+  margin: 50px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 1px inset;
+  width: 200px;
+}
+.product-portfolio-infor .inforNew-title {
+  text-align: center;
+  border-radius: 10px;
+  font-size: 25px;
+  animation: colorchange 2s infinite alternate;
+  color: white;
+}
+@keyframes colorchange {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: blue;
+  }
+}
+.product-portfolio-infor .inforNew-img img {
+  width: 150px;
+  height: 150px;
+  left: 100px;
+  transition: 0.7s;
+}
+
 .item {
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 1px 2px 2px 1px inset;
+  margin-top: 500px;
+}
+.product-portfolio-infor .inforNew-text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #294031;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+.product-portfolio-infor .inforNew-text:hover {
+  scale: 1.05;
 }
 .item-product {
-  width: 300px; /* Độ rộng của mỗi item-product */
-  height: 300px; /* Chiều cao của mỗi item-product */
+  width: 150px; /* Độ rộng của mỗi item-product */
+  height: 150px; /* Chiều cao của mỗi item-product */
   background-color: white;
   color: aliceblue;
   padding: 20px;
@@ -49,7 +98,7 @@
   margin-bottom: 10px;
 }
 .item .infor h3 {
-  font-size: 40px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 .item .infor button {
@@ -70,7 +119,7 @@
   color: white;
 }
 .item .infor p {
-  font-size: 20px;
+  font-size: 10px;
 }
 .item-product {
   transition: 0.7s;

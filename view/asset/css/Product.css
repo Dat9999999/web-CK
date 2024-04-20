@@ -6,11 +6,11 @@
 .product {
   position: absolute;
   display: flex;
-  left: 400px;
+  left: 200px;
   top: 150px;
 }
 .product h2 {
-  font-size: 40px;
+  font-size: 30px;
   padding: 10px;
   text-align: center;
   width: 500px;
@@ -18,19 +18,20 @@
 .product .product-header {
   position: absolute;
   top: 70px;
-  width: 1800px;
+  width: 1280px;
   max-height: min-content;
   border-style: groove;
 }
 
 .product .product-header .product-item {
   color: grey;
+  font-size: 20px;
 }
 .product .input_search {
-  width: 600px;
+  width: 300px;
   max-width: 600px;
   height: 45px;
-  padding: 12px;
+  padding: 7px;
   border-radius: 12px;
   border: 1.5px solid lightgrey;
   outline: none;
@@ -38,7 +39,6 @@
   background-color: white;
   margin: 30px 10px 30px 0;
   color: #142118;
-  font-size: 20px;
 }
 
 .product .input_search:hover {
@@ -47,7 +47,6 @@
 }
 .product .input_search::placeholder {
   color: gray;
-  font-size: 18px;
 }
 
 .product .input_search:focus {
@@ -55,7 +54,7 @@
 }
 .product label {
   font-size: 25px;
-  margin: 10px 10px 10px 70px;
+  margin: 10px 10px 10px 30px;
 }
 .product select {
   width: 200px;
@@ -69,21 +68,20 @@
   box-shadow: 0px 0px 20px -18px;
   background-color: white;
   margin: 30px 10px 10px 0;
-  font-size: 20px;
+  font-size: 15px;
   color: grey;
 }
 .product select option {
   color: grey;
-  font-size: 18px;
 }
 .product .product-button {
   background-color: #294031;
   color: white;
-  padding: 12px;
+  padding: 7px;
   border-radius: 5px;
   border: none;
-  width: 130px;
-  font-size: 20px;
+  width: 100px;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.7s;
 }
@@ -95,11 +93,11 @@
 .product .product-btnadd {
   background-color: #294031;
   color: white;
-  padding: 12px;
+  padding: 7px;
   border-radius: 5px;
   border: none;
-  width: 250px;
-  font-size: 20px;
+  width: 200px;
+  font-size: 15px;
   margin-left: 50px;
   cursor: pointer;
   transition: 0.7s;
@@ -121,8 +119,9 @@
 .product .product-list th,
 .product .product-list td {
   text-align: center; /* Căn giữa nội dung của các ô và tiêu đề */
-  padding: 12px; /* Đặt khoảng cách giữa nội dung và đường viền của ô */
   border: 1px solid lightgrey; /* Đặt đường viền cho các ô */
+  font-size: 10px;
+  padding: 5px;
 }
 
 .product .product-list th {
@@ -155,34 +154,60 @@
   display: flex;
   align-items: center;
 }
-
+.barcode-cell .barcode {
+  width: 170px;
+  height: 50px;
+}
 .product__img {
   width: 50px; /* Thiết lập kích thước ảnh */
   height: auto; /* Cho phép chiều cao tự động tính toán */
   margin-right: 10px; /* Khoảng cách giữa ảnh và tên sản phẩm */
 }
-
+.product .form-addPro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .product .add-product-form {
-  text-align: center;
-  margin: 20px;
+  margin-left: 100px;
+  border: 1px solid black;
+  padding: 100px;
+  width: 800px;
+  border-radius: 20px;
 }
 .product .add-product-form input {
+  position: absolute;
   border: 1px solid grey;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
-  margin-top: 20px;
+  width: 300px;
+  left: 900px;
 }
-.product .add-product-form label {
+.product .add-product-form .input1 {
+  margin: 40px;
+}
+.product .add-product-form .input1 label {
+  position: absolute;
+  left: 560px;
+}
+.product .add-product-form .title {
   font-size: 40px;
   font-weight: bold;
+  position: absolute;
+  top: 150px;
+  left: 720px;
 }
 .product .add-product-form button {
-  padding: 10px;
+  position: absolute;
+  top: 540px;
+  left: 890px;
+  padding: 15px;
   border: none;
   background-color: #294031;
   color: white;
   cursor: pointer;
   transition: 0.7s;
+  border-radius: 10px;
 }
 
 .product .add-product-form button:hover {
@@ -196,28 +221,31 @@
 .add-product-form {
   display: none;
 }
+/*  */
 
+/*  */
 .product .edit-product-form {
   text-align: center;
   margin: 20px;
 }
 .product .edit-product-form input {
   border: 1px solid grey;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
+  font-size: 20px;
 }
 .product .edit-product-form label {
   font-size: 40px;
   font-weight: bold;
 }
 .product .edit-product-form button {
-  padding: 10px;
+  padding: 20px;
   border: none;
   background-color: #294031;
   color: white;
   cursor: pointer;
-  transition: 0.7s;
+  border-radius: 10px;
 }
 
 .product .edit-product-form button:hover {
@@ -232,7 +260,7 @@
   display: none;
 }
 .product-list-body .action-cell .edit-button {
-  padding: 10px;
+  padding: 7px;
   margin: 5px;
   background-color: gray;
   color: white;
@@ -240,6 +268,7 @@
   border: none;
   cursor: pointer;
   transition: 0.7s;
+  font-size: 10px;
 }
 
 .product-list-body .action-cell .edit-button:hover {
@@ -248,7 +277,7 @@
   scale: 1.005;
 }
 .product-list-body .action-cell .delete-button {
-  padding: 10px;
+  padding: 7px;
   margin: 5px;
   background-color: rgb(172, 28, 28);
   color: white;
@@ -256,6 +285,7 @@
   border: none;
   cursor: pointer;
   transition: 0.7s;
+  font-size: 10px;
 }
 
 .product-list-body .action-cell .delete-button:hover {
