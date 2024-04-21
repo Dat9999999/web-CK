@@ -8,7 +8,7 @@
 
     <link
       rel="stylesheet"
-      href="./asset/font/fontawesome-free-6.5.1-web/css/all.min.css"
+      href="./view/asset/font/fontawesome-free-6.5.1-web/css/all.min.css"
     />
     <script
       src="https://kit.fontawesome.com/a076d05399.js"

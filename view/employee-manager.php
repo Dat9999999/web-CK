@@ -17,51 +17,6 @@
     <link rel="stylesheet" href="./view/asset/css/Nhanvien.css" />
   </head>
   <body>
-    <!-- Home -->
-    <div class="Home">
-      <div class="sidebar">
-        <div class="logo">Quản Lý</div>
-        <div class="menu">
-          <div class="menu-item" id="home">
-            <i class="fa-solid fa-house"></i>
-            Tổng Quan
-          </div>
-          <div class="menu-item" id="sanpham">
-            <i class="fas fa-cube"></i> Sản Phẩm
-          </div>
-          <div class="sub-menu-container" id="sanpham-submenu">
-            <div class="sub-menu-item">
-              <a href="./view/product.html">Danh sách sản phẩm</a>
-            </div>
-            <div class="sub-menu-item">Danh mục sản phẩm</div>
-          </div>
-          <div class="menu-item" id="khachhang">
-            <i class="fa-solid fa-user"></i> Khách Hàng
-          </div>
-          <div class="menu-item" id="baocao">
-            <i class="fa-regular fa-clipboard"></i> Báo Cáo
-          </div>
-          <div class="sub-menu-container" id="baocao-submenu">
-            <div class="sub-menu-item">Tổng quan báo cáo</div>
-            <div class="sub-menu-item">Danh Sách Báo Cáo</div>
-          </div>
-          <div class="menu-item" id="baocao">
-            <i class="fa-solid fa-person-circle-check"></i> Quản Lý Nhân Viên
-          </div>
-        </div>
-      </div>
-      <div class="header">
-        <div class="title">
-          <h1>Quản Lý Nhân Viên</h1>
-        </div>
-
-        <div class="button">
-          <button>Đăng Nhập</button>
-        </div>
-      </div>
-      <!-- Nội dung trang chủ -->
-    </div>
-
     <!-- ------------->
     <div class="staff">
       <h2>Danh sách nhân viên</h2>
@@ -78,12 +33,13 @@
 
         <button class="staff-btnadd" onclick= addStaff()>Thêm Nhân Viên</button>
 
-        <form action = "add-staff.php" method = "post" id="addstaffForm" class="add-staff-form">
+        <form action = "index.php?pg=add-staff" method = "post" id="addstaffForm" class="add-staff-form">
           <label for="">Thêm Nhân Viên</label><br />
-          <input type="file" id="imgUrl" />
-          <input type="text" id="Name" placeholder="Name" />
-          <input type="email" id="Email" placeholder="Email"/>
+          <!-- <input type="file" id="imgUrl" /> -->
+          <input required name = "staff-name" type="text" id="Name" placeholder="Name" />
+          <input required name = "staff-email" type="email" id="Email" placeholder="Email"/>
           
+          <input type="hidden" name = "btn-add-staff" value ="1">
           <button type="submit">Thêm Nhân Viên</button>
         </form>
 
