@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         type: "warning",
         duration: 3000,
       });
-    } else if (passwordValue.length < 6) {
+    } else if (passwordValue.length < 5) {
       isValid = false;
       toast({
         title: "Cảnh báo!",
@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Nếu tất cả hợp lệ, submit form
     if (isValid) {
       form.submit();
-      toast({
-        title: "Thành công!",
-        message: "Bạn đã đăng nhập thành công!",
-        type: "success",
-        duration: 3000,
-      });
+      // toast({
+      //   title: "Thành công!",
+      //   message: "Bạn đã đăng nhập thành công!",
+      //   type: "success",
+      //   duration: 3000,
+      // });
     }
   });
   function toast({ title = "", message = "", type = "info", duration = 3000 }) {
