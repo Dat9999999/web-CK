@@ -27,7 +27,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                 }
                 header('location: index.php?pg=employee-manager');
                 break;
-
+            case'products':
+                include_once("./view/products.php");
+                break;
+            case 'report':
+                include_once('./view/report.php');
+                break;
             case 'home':
                 include_once('./view/home.php');
                 break;
@@ -39,8 +44,11 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
     else{
         include_once('./view/home.php');
     }
-
+    
     //header 
+}
+else if(isset($_GET['token']) && $_GET['token'] !=""){
+    header('location: view/first_login.php');
 }
 else{ 
     header('location: view/login.php');

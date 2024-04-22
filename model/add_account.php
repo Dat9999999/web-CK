@@ -13,7 +13,7 @@ function addStaff($staffName, $staffEmail){
     }
     
     // Prepare SQL statement
-    $sql = "INSERT INTO employee (user_name, full_name, email, password, avatar, status, lock_) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO employee (user_name, full_name, email, password, avatar, status, lock_,token, expiry_time) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
     $stmt = $conn->prepare($sql);
 
     
@@ -28,14 +28,19 @@ function addStaff($staffName, $staffEmail){
     $status = "inactive";
     $avatar = "";
     $lock = "no";
+    $currentTime = time();
+    $expiryTime = $currentTime + 60;
+    $token = generateToken();
+    $loginUrl = "http:localhost:8080/web-CK/index.php?token=$token";
 
 
     // Bind parameters to statement
-    $stmt->bind_param("sssssss", $user_name, $staffName, $staffEmail, $password, $avatar, $status, $lock);
+    $stmt->bind_param("ssssssssi", $user_name, $staffName, $staffEmail, 
+    $password, $avatar, $status, $lock, $token, $expiryTime);
     
     // Execute the statement
     if ($stmt->execute() === TRUE) {
-        sendMail($staffEmail);
+        sendMail($staffEmail, $loginUrl);
     } else {
         echo "Error: " . $stmt->error;
     }

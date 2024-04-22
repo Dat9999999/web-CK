@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(isset($_SESSION['logged']) && $_SESSION['logged']){
-  header('location: ../index.php');
-}
+// if(isset($_SESSION['logged']) && $_SESSION['logged']){
+//   header('location: ../index.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +27,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
         <h1><i class="fa-brands fa-phoenix-squadron"></i> Đăng Nhập</h1>
       </div> -->
       <div class="container">
-        <div class="heading">Đăng Nhập</div>
-        <form action="login.php" method = "post" class="form">
+        <div class="heading">Đăng Nhập Lần Đầu</div>
+        <form action="first_login.php" method = "post" class="form">
           <input
             class="input"
             type="text-user"
@@ -47,42 +47,30 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
             <?php
               include_once("../model/check_account.php");
               if(isset($_POST['submit']) && $_POST['submit']){
-
-                if(checkAdmin($_POST['name'], $_POST['password'])){
-                  $_SESSION['logged'] = true;
-
-                  //xác định người dùng
-                  $_SESSION['name'] = $_POST['name'];
-                  
-                  // Phân quyền truy cập
-                  $_SESSION['role'] = "admin";
-
-                  $_SESSION['password'] = $_POST['password'];
-                }
-
-                else{
                   $employee = checkEmployee($_POST['name'], $_POST['password']);
+
                   if($employee){
-                    if(checkstatus($employee['status'])){
+                    // check expiry time
+                    $currTime = time();
+                    if($employee['expiry_time'] >= $currTime){
                       $_SESSION['logged'] = true;
-                      
-                      //xác định người dùng
                       $_SESSION['name'] = $_POST['name'];
-
-                      // Phân quyền truy cập 
                       $_SESSION['role'] = "employee";
-                      
-                      $_SESSION['password'] = $_POST['password'];
-                    }
-                    else {
-                      echo '<h1 style = "color: red">Bạn cần đăng nhập từ link thông qua mail cho lần đăng nhập đầu tiên</h1>';
-                    }
-                  }
-                }
-              }
 
-              if(isset($_SESSION['logged']) && $_SESSION['logged']){
-                header('location: ../index.php');
+                      // status of new employee
+                      $_SESSION['employee-inactive'] = true;
+                      
+                      //change password after first login
+                      $_SESSION['change-password'] = false;
+                      
+                      header("location: changePassword.php");
+                    }
+                    else{
+                      echo '<h1 style ="color:red" >Đã quá thời gian hiệu lực của đường dẫn</h1>';
+                    }                    
+
+
+                  }
               }
               ?>
           </form>

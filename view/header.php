@@ -26,39 +26,41 @@
             <div class="menu-item" id="home">
               <i class="fa-solid fa-house"></i>
               <a href="index.php?pg=home" class="">
-                Tổng Quan
+                Tổng Quan 
               </a>
             </div>
             <div class="menu-item" id="sanpham">
-              <i class="fas fa-cube"></i> Sản Phẩm
+              <i class="fas fa-cube"></i>
+              <a href="index.php?pg=products">Danh sách sản phẩm</a>
             </div>
-            <div class="sub-menu-container" id="sanpham-submenu">
+            <!-- <div class="sub-menu-container" id="sanpham-submenu">
               <div class="sub-menu-item">
-                <a href="./view/product.html">Danh sách sản phẩm</a>
+                <a href="index.php?pg=products">Danh sách sản phẩm</a>
               </div>
               <div class="sub-menu-item">Danh mục sản phẩm</div>
-            </div>
+            </div> -->
             <div class="menu-item" id="khachhang">
               <i class="fa-solid fa-user"></i> Khách Hàng
             </div>
             <div class="menu-item" id="baocao">
-              <i class="fa-regular fa-clipboard"></i> Báo Cáo
+              <i class="fa-regular fa-clipboard"></i>
+              <a href="index.php?pg=report">Báo Cáo</a>
             </div>
-            <div class="sub-menu-container" id="baocao-submenu">
-              <div class="sub-menu-item">Tổng quan báo cáo</div>
-              <div class="sub-menu-item">Danh Sách Báo Cáo</div>
-            </div>
-            <div class="menu-item" id="quanly">
+
+            <?php
+            if(isset($_SESSION['role']) && (strcmp($_SESSION['role'],"admin") == 0)){
+              echo '<div class="menu-item" id="quanly">
               <i class="fa-solid fa-person-circle-check"></i>
               <a href="index.php?pg=employee-manager">Quản Lý Nhân Viên</a>
-            </div>
+            </div>';
+            }
+            ?>
           </div>
         </div>
         <div class="header">
           <div class="title">
             <h1>Tổng Quan Báo Cáo</h1>
           </div>
-  
           <div class="button">
             <button>
               <a href="index.php?pg=changePassword" class=""> Đổi mật khẩu</a>

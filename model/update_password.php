@@ -11,4 +11,9 @@ function update_passwordAdmin($name, $newPassword){
     $sql = 'UPDATE acc_admin SET password = ? WHERE acc_admin.user = ?';
     return update_password($sql,$name, $newPassword);
 }
+
+function update_passwordEmployee($name, $newPassword){
+    $sql = 'UPDATE employee SET password = ? WHERE user_name = ?';
+    return update_password($sql,$name, $newPassword);
+}
 ?>

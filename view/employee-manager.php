@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,14 +63,24 @@
           <thead>
             <tr>
               <th>Họ tên</th>
-              <th>Email</th>
+              <th>Trạng thái</th>
               <th>avtar</th>
             </tr>
           </thead>
           <tbody class="staff-list-body" id="staffListBody">
             <tr>
               <th>Huynh Dat</th>
-              <th>123@gmail.com</th>
+              <th>Hoạt động</th>
+              <th><img src="./asset/img/avatar/unkown.jpg" width ="100%"></th>
+            </tr>
+            <tr>
+              <th>Huynh Dat</th>
+              <th>Hoạt động</th>
+              <th><img src="./asset/img/avatar/unkown.jpg" width ="100%"></th>
+            </tr>
+            <tr>
+              <th>Huynh Dat</th>
+              <th>Hoạt động</th>
               <th><img src="./asset/img/avatar/unkown.jpg" width ="100%"></th>
             </tr>
           </tbody>

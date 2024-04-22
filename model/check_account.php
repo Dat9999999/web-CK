@@ -15,9 +15,9 @@ function checkAdmin($name , $pass){
 }
 
 
+
+
 // function check employee
-
-
 function getEmployee($name, $pass){
     $sql = "SELECT * FROM employee WHERE user_name = ? AND password = ?";
     $conn = connect_db();
@@ -41,8 +41,10 @@ function checkEmployee($name, $pass){
     return  $emp;
 }
 
-function checkStatus($name){
-
+function checkStatus($status){
+    if(strcmp($status,"inactive") == 0){
+        return false;
+    }
     return true;
 }
 
