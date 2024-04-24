@@ -11,13 +11,32 @@ function getAdmin(){
 }
 function checkAdmin($name , $pass){
     $admin = getAdmin();
-    return strcmp($admin["user"] , $name) == 0 && strcmp($admin["password"] , $pass) == 0;
+    return strcmp($admin["user_name"] , $name) == 0 && strcmp($admin["password"] , $pass) == 0;
 }
 
 
-
-
 // function check employee
+
+// this function helps admin get infomation of employee when he or she click button chi tiet
+function getEmployeeByUserName($name){
+    $sql = "SELECT * FROM employee WHERE user_name = ?";
+    $conn = connect_db();
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s",$name);
+    if(!$stmt->execute()){
+        return false;
+    }
+
+    $result = $stmt->get_result();
+    if($result->num_rows > 0){
+        $employee = $result->fetch_assoc();
+        $conn->close();
+        return $employee;
+    }
+    return false;
+}
+
 function getEmployee($name, $pass){
     $sql = "SELECT * FROM employee WHERE user_name = ? AND password = ?";
     $conn = connect_db();
@@ -31,6 +50,7 @@ function getEmployee($name, $pass){
     $result = $stmt->get_result();
     if($result->num_rows > 0){
         $employee = $result->fetch_assoc();
+        $conn->close();
         return $employee;
     }
     return false;
@@ -43,6 +63,12 @@ function checkEmployee($name, $pass){
 
 function checkStatus($status){
     if(strcmp($status,"inactive") == 0){
+        return false;
+    }
+    return true;
+}
+function unlock($lock_){
+    if($lock_ == "yes"){
         return false;
     }
     return true;

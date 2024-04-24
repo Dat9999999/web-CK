@@ -1,8 +1,8 @@
 // document.addEventListener("DOMContentLoaded", function () {
 //   const $ = document.querySelector.bind(document);
 
-//   const liststaff = {
-//     liststaff1: [
+//   const liststaff = 
+//     [
 //       {
 //         Name: "Lê Tấn Phước",
 //         CountrySide: "Vũng Tàu",
@@ -57,11 +57,10 @@
 //         Age: 20,
 //         Date_worked: "21/2/2016",
 //       },
-//     ],
-//   };
+//     ];
 
 //   const tbody = $(".staff-list-body");
-//   let allstaffs = liststaff.liststaff1;
+//   let allstaffs = liststaff;
 
 //   function renderStaffList(staffs) {
 //     tbody.innerHTML = ""; // Clear existing rows
@@ -116,115 +115,115 @@
 //     editStaffForm.style.display = "block";
 
 //     // Handle form submission for editing
-//     editStaffForm.addEventListener("submit", function (event) {
-//       event.preventDefault();
+//     // editStaffForm.addEventListener("submit", function (event) {
+//     //   event.preventDefault();
 
-//       const editedStaff = {
-//         Name: $("#EditName").value.trim(),
-//         Country: $("#EditCountry").value.trim(),
-//         Position: $("#EditPosition").value.trim(),
-//         Age: $("#EditAge").value.trim(),
-//         Date_worked: staff.Date_worked, // Preserve original date worked
-//       };
+//     //   // const editedStaff = {
+//     //   //   Name: $("#EditName").value.trim(),
+//     //   //   Country: $("#EditCountry").value.trim(),
+//     //   //   Position: $("#EditPosition").value.trim(),
+//     //   //   Age: $("#EditAge").value.trim(),
+//     //   //   Date_worked: staff.Date_worked, // Preserve original date worked
+//     //   // };
 
-//       const index = liststaff.liststaff1.findIndex(
-//         (s) => s.Name === staff.Name
-//       );
-//       if (index !== -1 && confirm("Bạn có chắc là muốn không?")) {
-//         liststaff.liststaff1[index] = editedStaff;
-//         renderStaffList(); // Update staff list after editing
-//         editStaffForm.style.display = "none"; // Hide edit form
-//       }
-//     });
+//     //   const index = liststaff.findIndex(
+//     //     (s) => s.Name === staff.Name
+//     //   );
+//     //   if (index !== -1 && confirm("Bạn có chắc là muốn không?")) {
+//     //     liststaff[index] = editedStaff;
+//     //     renderStaffList(); // Update staff list after editing
+//     //     editStaffForm.style.display = "none"; // Hide edit form
+//     //   }
+//     // });
 //   }
 
 //   // Function to delete a staff member
-//   function deleteStaff(name) {
-//     const index = liststaff.liststaff1.findIndex(
-//       (staff) => staff.Name === name
-//     );
-//     if (index !== -1) {
-//       liststaff.liststaff1.splice(index, 1);
-//       renderStaffList(); // Update staff list after deletion
-//       alert("Đã xóa nhân viên thành công!");
-//     }
-//   }
+//   // function deleteStaff(name) {
+//   //   const index = liststaff.findIndex(
+//   //     (staff) => staff.Name === name
+//   //   );
+//   //   if (index !== -1) {
+//   //     liststaff.splice(index, 1);
+//   //     renderStaffList(); // Update staff list after deletion
+//   //     alert("Đã xóa nhân viên thành công!");
+//   //   }
+//   // }
 
 //   // Initial rendering of staff list
 //   renderStaffList();
 
 //   // Event listener for search button
-//   $(".staff-button").addEventListener("click", function () {
-//     const searchText = $(".input_search").value.trim().toLowerCase();
-//     const filteredStaff = allstaffs.filter((staff) =>
-//       staff.Name.toLowerCase().includes(searchText)
-//     );
-//     renderStaffList(filteredStaff);
-//     if (filteredStaff.length === 0) {
-//       alert("Không tìm thấy nhân viên nào.");
-//     }
-//   });
+//   // $(".staff-button").addEventListener("click", function () {
+//   //   const searchText = $(".input_search").value.trim().toLowerCase();
+//   //   const filteredStaff = allstaffs.filter((staff) =>
+//   //     staff.Name.toLowerCase().includes(searchText)
+//   //   );
+//   //   renderStaffList(filteredStaff);
+//   //   if (filteredStaff.length === 0) {
+//   //     alert("Không tìm thấy nhân viên nào.");
+//   //   }
+//   // });
 
 //   // Event listener for add button to toggle add staff form visibility
-//   $(".staff-btnadd").addEventListener("click", function () {
-//     const addstaffForm = $(".add-staff-form");
-//     addstaffForm.style.display =
-//       addstaffForm.style.display === "none" ? "block" : "none";
-//   });
+//   // $(".staff-btnadd").addEventListener("click", function () {
+//   //   const addstaffForm = $(".add-staff-form");
+//   //   addstaffForm.style.display =
+//   //     addstaffForm.style.display === "none" ? "block" : "none";
+//   // });
 
 //   // Event listener for submit button in add staff form
-//   $("#addstaffForm").addEventListener("submit", function (event) {
-//     event.preventDefault();
+//   // $("#addstaffForm").addEventListener("submit", function (event) {
+//   //   event.preventDefault();
 
-//     // Retrieve input values
-//     const Name1 = $("#Name").value.trim();
-//     const Country1 = $("#Country").value.trim();
-//     const Position1 = $("#Position").value.trim();
-//     const Age1 = $("#Age").value.trim();
+//   //   // Retrieve input values
+//   //   const Name1 = $("#Name").value.trim();
+//   //   const Country1 = $("#Country").value.trim();
+//   //   const Position1 = $("#Position").value.trim();
+//   //   const Age1 = $("#Age").value.trim();
 
-//     // Validate input
-//     if (!Name1 || !Country1 || !Position1 || !Age1) {
-//       alert("Vui lòng điền đầy đủ thông tin nhân viên.");
-//       return;
-//     }
+//   //   // Validate input
+//   //   if (!Name1 || !Country1 || !Position1 || !Age1) {
+//   //     alert("Vui lòng điền đầy đủ thông tin nhân viên.");
+//   //     return;
+//   //   }
 
-//     // Create a new staff object
-//     const newStaff = {
-//       Name: Name1,
-//       Country: Country1,
-//       Position: Position1,
-//       Age: Age1,
-//       Date_worked: new Date().toLocaleDateString(),
-//     };
+//   //   // Create a new staff object
+//   //   const newStaff = {
+//   //     Name: Name1,
+//   //     Country: Country1,
+//   //     Position: Position1,
+//   //     Age: Age1,
+//   //     Date_worked: new Date().toLocaleDateString(),
+//   //   };
 
-//     // Add the new staff to the list
-//     liststaff.liststaff1.push(newStaff);
+//   //   // Add the new staff to the list
+//   //   liststaff.push(newStaff);
 
-//     // Update the staff list view
-//     renderStaffList();
+//   //   // Update the staff list view
+//   //   renderStaffList();
 
-//     // Reset the add staff form
-//     $("#addstaffForm").reset();
+//   //   // Reset the add staff form
+//   //   $("#addstaffForm").reset();
 
-//     // Hide the add staff form
-//     $(".add-staff-form").style.display = "none";
+//   //   // Hide the add staff form
+//   //   $(".add-staff-form").style.display = "none";
 
-//     // Show success message
-//     alert("Thêm nhân viên thành công!");
-//   });
+//   //   // Show success message
+//   //   alert("Thêm nhân viên thành công!");
+//   // });
 
 //   // Function to show details of a staff member
-//   function showDetails(staff) {
-//     const modalContent = `Thông tin chi tiết:\n
-//         Tên: ${staff.Name}\n
-//         Quê Quán:${staff.CountrySide}\n
-//         Thường Trú: ${staff.Country}\n
-//         Địa Chỉ Thường Trú: ${staff.Address}\n
-//         Chức vụ: ${staff.Position}\n
-//         Tuổi: ${staff.Age}\n
-//         Ngày bắt đầu làm việc: ${staff.Date_worked}`;
-//     alert(modalContent);
-//   }
+//   // function showDetails(staff) {
+//   //   const modalContent = `Thông tin chi tiết:\n
+//   //       Tên: ${staff.Name}\n
+//   //       Quê Quán:${staff.CountrySide}\n
+//   //       Thường Trú: ${staff.Country}\n
+//   //       Địa Chỉ Thường Trú: ${staff.Address}\n
+//   //       Chức vụ: ${staff.Position}\n
+//   //       Tuổi: ${staff.Age}\n
+//   //       Ngày bắt đầu làm việc: ${staff.Date_worked}`;
+//   //   alert(modalContent);
+//   // }
 // });
 
 

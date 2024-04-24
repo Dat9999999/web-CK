@@ -38,9 +38,6 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
             case 'report':
                 include_once('./view/report.php');
                 break;
-            case 'info':
-                include_once('./view/info.php');
-                break;
             case 'home':
                 include_once('./view/home.php');
                 break;

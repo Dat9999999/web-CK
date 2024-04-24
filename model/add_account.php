@@ -26,7 +26,7 @@ function addStaff($staffName, $staffEmail){
     $user_name = $staffName . '@gmail.com';
     $password = $staffName; // For the first time login, password = full name
     $status = "inactive";
-    $avatar = "";
+    $avatar = "unkown.jpg";
     $lock = "no";
     $currentTime = time();
     $expiryTime = $currentTime + 60;

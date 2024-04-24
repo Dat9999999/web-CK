@@ -33,12 +33,6 @@
               <i class="fas fa-cube"></i>
               <a href="index.php?pg=products">Danh sách sản phẩm</a>
             </div>
-            <!-- <div class="sub-menu-container" id="sanpham-submenu">
-              <div class="sub-menu-item">
-                <a href="index.php?pg=products">Danh sách sản phẩm</a>
-              </div>
-              <div class="sub-menu-item">Danh mục sản phẩm</div>
-            </div> -->
             <div class="menu-item" id="khachhang">
               <i class="fa-solid fa-user"></i> Khách Hàng
             </div>
@@ -46,7 +40,10 @@
               <i class="fa-regular fa-clipboard"></i>
               <a href="index.php?pg=report">Báo Cáo</a>
             </div>
-
+            <div class="menu-item" id="baocao">
+                      <i class="fa-solid fa-user"></i>
+                      <a href="index.php?pg=info">Thông Tin Cá Nhân</a>
+            </div>
             <?php
             if(isset($_SESSION['role']) && (strcmp($_SESSION['role'],"admin") == 0)){
               echo '<div class="menu-item" id="quanly">

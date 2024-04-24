@@ -63,7 +63,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                 else{
                   $employee = checkEmployee($_POST['name'], $_POST['password']);
                   if($employee){
-                    if(checkstatus($employee['status'])){
+                    if(checkstatus($employee['status']) && unlock($employee['lock_'])){
                       $_SESSION['logged'] = true;
                       
                       //xác định người dùng
@@ -75,7 +75,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                       $_SESSION['password'] = $_POST['password'];
                     }
                     else {
-                      echo '<h1 style = "color: red">Bạn cần đăng nhập từ link thông qua mail cho lần đăng nhập đầu tiên</h1>';
+                      echo '<h1 style = "color: red">Tài khoản của bạn chưa được kích hoạt hoặc đã bị khóa</h1>';
                     }
                   }
                 }
