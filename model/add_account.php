@@ -1,8 +1,6 @@
 <?php
 include_once("connect_db.php");
 include_once("send_mail.php");
-session_start();
-
 function addStaff($staffName, $staffEmail){
     // Establish database connection
     $conn = connect_db();
@@ -50,6 +48,39 @@ function addStaff($staffName, $staffEmail){
     $conn->close();
 }
 
+function addCustomer($customerName, $phone, $address){
+    // Establish database connection
+    $conn = connect_db();
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    // Prepare SQL statement
+    $sql = "INSERT INTO customer (full_name, phone, address) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    
+    // Check for SQL errors
+    if (!$stmt) {
+        die("Error: " . $conn->error);
+    }
+
+
+
+    // Bind parameters to statement
+    $stmt->bind_param("sss",$customerName, $phone, $address);
+    
+    // Execute the statement
+    if ($stmt->execute() === TRUE) {
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
+        return true;
+    } else {
+        return false;
+    }
+
+}
 
 // header('location: index.php?pg=employee-manager.php');
 ?>

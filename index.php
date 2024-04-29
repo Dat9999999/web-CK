@@ -20,9 +20,25 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                 include_once("./view/employee-manager.php");
                 break;
             
-            // case 'detail-employee':
-            //     include_once("./view/detail-employee.php");
-            //     break;
+            case 'detail-employee':
+                if(isset($_SESSION['role']) && ($_SESSION['role'] == "admin")){
+                    if(isset($_GET['detail-employee']) && $_GET['detail-employee'] !=""){
+                        $_SESSION['detail-name-staff'] = $_GET['detail-employee'];
+                        include_once("./view/detail-employee.php");
+                    }
+                    else if(isset($_GET['resend-email']) && $_GET['resend-email'] !=""){
+                        include_once("./model/send_mail.php");
+                        resendMail($_GET['resend-email']);
+                        include_once("./view/detail-employee.php");
+                    }
+                    else if((isset($_GET['lock-or-unlock']) && $_GET['lock-or-unlock'] !="") && (isset($_GET['src']) && $_GET['src'] !="")){
+                        include_once("./model/set_account.php");
+                        setLockOrUnlock($_GET['lock-or-unlock'], $_GET['src']);
+                        include_once("./view/detail-employee.php");
+                        
+                    }
+                }
+                break;
 
             case 'add-staff':
                 if(isset($_POST['btn-add-staff']) && ($_POST['btn-add-staff']) > 0){
@@ -35,6 +51,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
             case'products':
                 include_once("./view/products.php");
                 break;
+            case'customer':
+                if(isset($_GET['id'])){
+                    $_SESSION['renderDetailPurchase'] ='nok';     
+                }                
+                include_once("./view/customer.php");
+                break;
             case 'report':
                 include_once('./view/report.php');
                 break;
@@ -46,24 +68,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                 break;
                 
             default:
+                include_once('./view/home.php');
                 break;
-        }
-    }
-    else if(isset($_SESSION['role']) && ($_SESSION['role'] == "admin")){
-        if(isset($_GET['detail-employee']) && $_GET['detail-employee'] !=""){
-            $_SESSION['detail-name-staff'] = $_GET['detail-employee'];
-            include_once("./view/detail-employee.php");
-        }
-        else if(isset($_GET['resend-email']) && $_GET['resend-email'] !=""){
-            include_once("./model/send_mail.php");
-            resendMail($_GET['resend-email']);
-            include_once("./view/detail-employee.php");
-        }
-        else if((isset($_GET['lock-or-unlock']) && $_GET['lock-or-unlock'] !="") && (isset($_GET['src']) && $_GET['src'] !="")){
-            include_once("./model/set_account.php");
-            setLockOrUnlock($_GET['lock-or-unlock'], $_GET['src']);
-            include_once("./view/detail-employee.php");
-
         }
     }
     else{

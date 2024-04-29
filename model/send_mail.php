@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once("set_account.php");
 // Hàm để tạo mã xác thực ngẫu nhiên
 function generateToken() {
