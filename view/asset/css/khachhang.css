@@ -1,0 +1,140 @@
+.container {
+    margin-left: 12%;
+    margin-top: 50px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+.customer-info {
+    max-width: 100%;
+    padding-left: 12%;
+    border-radius: 5px;
+}
+
+.customer-info h2 {
+    margin-bottom: 20px;
+}
+
+.customer-field {
+    margin-bottom: 10px;
+}
+
+.field-label {
+    font-weight: bold;
+}
+
+.field-value {
+    margin-left: 10px;
+}
+
+.customer-management {
+    margin-top: 20px;
+}
+
+.customer-form {
+    margin-bottom: 30px;
+}
+
+.customer-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customer-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.customer-form button {
+    padding: 10px 20px;
+    background-color: #294031;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.customer-info h3 {
+    margin-top: 20px;
+}
+
+.customer-info p {
+    margin-bottom: 10px;
+}
+
+.customer-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.customer-info table th, .customer-info table td {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    text-align: left;
+}
+
+.customer-info table th {
+    background-color: #294031;
+    color: white;
+}
+
+#orderDetails {
+    margin-top: 20px;
+}
+
+.checkout {
+    margin-top: 20px;
+}
+
+.checkout label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.checkout input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.checkout button {
+    padding: 10px 20px;
+    background-color: #294031;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.customer-info {
+    margin-top: 20px;
+}
+
+.checkout button {
+    background-color: #294031;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.3s; /* Hiệu ứng chuyển đổi opacity */
+}
+
+.checkout button:hover {
+    opacity: 1; /* Khi hover, opacity tăng lên */
+}
+
+/* Button "Xem chi tiết" */
+.order-details-button {
+    background-color: #294031;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-details-button:hover {
+    background-color: #1e2e23;
+}

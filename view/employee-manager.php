@@ -13,7 +13,7 @@ foreach($listEmployee as $item){
                           
                             <th style = "background-color:#e4e3e3; color : #000">
                               <button>
-                                <a style = "background-color:#294031; text-decoration:none; color : #fff" href="index.php?detail-employee='.$userName.'">chi tiết</a>
+                                <a style = "background-color:#294031; text-decoration:none; color : #fff" href="index.php?pg=detail-employee&detail-employee='.$userName.'">chi tiết</a>
                               </button>
                             </th>
                           </tr>';

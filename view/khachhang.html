@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="./asset/font/fontawesome-free-6.5.1-web/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./asset/css/home.css" />
+    <link rel="stylesheet" href="./asset/css/khachhang.css" />
+  </head>
+  <body>
+    <!-- Home -->
+    <div class="Home">
+      <div class="sidebar">
+        <div class="logo">Quản Lý</div>
+        <div class="menu">
+          <div class="menu-item" id="home">
+            <i class="fa-solid fa-house"></i>
+            Trang Chủ
+          </div>
+          <div class="menu-item" id="sanpham">
+            <i class="fas fa-cube"></i> Sản Phẩm
+          </div>
+          <div class="sub-menu-container" id="sanpham-submenu">
+            <div class="sub-menu-item">
+              <a href="./view/product.html">Danh sách sản phẩm</a>
+            </div>
+            <div class="sub-menu-item">Danh mục sản phẩm</div>
+          </div>
+          <div class="menu-item" id="khachhang">
+            <i class="fa-solid fa-user"></i> Khách Hàng
+          </div>
+          <div class="menu-item" id="baocao">
+            <i class="fa-regular fa-clipboard"></i> Báo Cáo
+          </div>
+          <div class="sub-menu-container" id="baocao-submenu">
+            <div class="sub-menu-item">Tổng quan báo cáo</div>
+            <div class="sub-menu-item">Danh Sách Báo Cáo</div>
+          </div>
+          <div class="menu-item" id="quanly">
+            <i class="fa-solid fa-person-circle-check"></i>
+            <a href="./view/Nhanvien.html">Quản Lý Nhân Viên</a>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="title">
+          <h1>Trang Chủ</h1>
+        </div>
+        <div class="input-wrapper">
+          <button class="icon">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                stroke="#fff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M22 22L20 20"
+                stroke="#fff"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+          <input type="text" name="text" class="input" placeholder="search.." />
+        </div>
+
+        <div class="button">
+          <button>Đăng Nhập</button>
+          <button>Đăng Kí</button>
+        </div>
+      </div>
+      <!-- Nội dung trang chủ -->
+      <div class="content">
+    <div class="container">
+        <!-- Thanh toán tại quầy thu ngân -->
+        <div class="checkout">
+          <div class="checkout">
+            <h2>Thanh toán</h2>
+            <label for="customerPhoneCheckout">Nhập số điện thoại khách hàng:</label>
+            <input type="text" id="customerPhoneCheckout" name="customerPhoneCheckout" placeholder="Nhập số điện thoại...">
+            <button onclick="checkout()">Thanh toán</button>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+                </div>
+
+        <!-- Thông tin cá nhân và lịch sử mua hàng -->
+        <div class="customer-info">
+          <div id="customerDetails">
+            <!-- Thông tin cá nhân và lịch sử mua hàng sẽ được hiển thị ở đây -->
+          </div>
+        </div>
+          <div class="customer-management">
+            <!-- Form nhập thông tin khách hàng -->
+            <div class="customer-form" id="customerForm" style="display: none;">
+              <h2>Tạo khách hàng mới</h2>
+              <label for="customerFullName">Họ và tên:</label>
+              <input type="text" id="customerFullName" name="customerFullName" placeholder="Nhập họ và tên..." />
+              <label for="customerAddressInfo">Địa chỉ:</label>
+              <input type="text" id="customerAddressInfo" name="customerAddressInfo" placeholder="Nhập địa chỉ..." />
+              <button onclick="createCustomerAccount()">Tạo tài khoản</button>
+            </div>
+            <!-- Hiển thị thông tin khách hàng và lịch sử mua hàng -->
+            <div class="customer-info" id="customerInfo" style="display: none;">
+              <h3>Thông tin khách hàng</h3>
+              <p><strong>Họ và tên:</strong> <span id="customerFullNameDisplay">Không có thông tin</span></p>
+              <p><strong>Địa chỉ:</strong> <span id="customerAddressInfoDisplay">Không có thông tin</span></p>
+              <p><strong>Số điện thoại:</strong> <span id="customerPhoneInfoDisplay">Không có thông tin</span></p>
+              <h3>Lịch sử mua hàng</h3>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Mã đơn hàng</th>
+                          <th>Ngày mua</th>
+                          <th>Tổng tiền</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody id="purchaseHistory">
+                      <!-- Các đơn hàng sẽ được thêm vào đây -->
+                  </tbody>
+              </table>
+              
+            <!-- Chi tiết đơn hàng -->
+            <div id="orderDetails" style="display: none;">
+              <h3>Chi tiết đơn hàng</h3>
+              <p><strong>Mã đơn hàng:</strong> <span id="orderId"></span></p>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Tên sản phẩm</th>
+                          <th>Số lượng</th>
+                          <th>Ngày mua</th>
+                          <th>Tổng tiền</th>
+                          <th>Tiền nhận</th>
+                          <th>Tiền trả</th>
+                      </tr>
+                  </thead>
+                  <tbody id="orderDetailsBody">
+                      <!-- Chi tiết đơn hàng sẽ được thêm vào đây -->
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- order -->
+
+    <!-- JavaScript -->
+    <script src="./asset/js/Home.js"></script>
+    <script src="./asset/js/khachhang.js"></script>
+  </body>
+</html>

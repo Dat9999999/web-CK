@@ -34,7 +34,9 @@
               <a href="index.php?pg=products">Danh sách sản phẩm</a>
             </div>
             <div class="menu-item" id="khachhang">
-              <i class="fa-solid fa-user"></i> Khách Hàng
+              <i class="fa-solid fa-money-check-dollar"></i>
+              <a href="index.php?pg=customer">Thanh Toán</a>
+
             </div>
             <div class="menu-item" id="baocao">
               <i class="fa-regular fa-clipboard"></i>
