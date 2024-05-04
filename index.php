@@ -39,7 +39,6 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                     }
                 }
                 break;
-
             case 'add-staff':
                 if(isset($_POST['btn-add-staff']) && ($_POST['btn-add-staff']) > 0){
                     include_once("./model/add_account.php");
@@ -47,15 +46,58 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
                 }
                 header('location: index.php?pg=employee-manager');
                 break;
-
-            case'products':
-                include_once("./view/products.php");
-                break;
             case'customer':
                 if(isset($_GET['id'])){
                     $_SESSION['renderDetailPurchase'] ='nok';     
                 }                
                 include_once("./view/customer.php");
+                break;
+                        
+            case'products':
+                include_once("./view/products.php");
+                break;
+            case 'add-product':
+                if(isset($_POST['btnAddProduct']) && $_POST['btnAddProduct']){
+
+                    // convert date into timestamp 
+                    $_POST['creationalDate'] = DateTime::createFromFormat('Y-m-d', $_POST['creationalDate']);
+                    if ($_POST['creationalDate'] === false) {
+                        die("Incorrect date string");
+                    } else {
+                        include_once("./model/add_product.php");
+                        // save new data in db
+                        addProduct($_POST['productName'],$_POST['catalog'],$_POST['originalPrice'],$_POST['price'],$_POST['creationalDate']->getTimestamp(),$_POST['barcode']);
+                        header('location: index.php?pg=products');
+                    }
+                }
+                
+                break;
+            case'edit-product':
+                if(isset($_POST['btnUpdateProduct']) && $_POST['btnUpdateProduct']){
+
+                    // convert date into timestamp 
+                    $_POST['creationalDate'] = DateTime::createFromFormat('Y-m-d', $_POST['creationalDate']);
+                    if ($_POST['creationalDate'] === false) {
+                        die("Incorrect date string");
+                    } else {
+                        include_once("./model/set_product.php");
+                        // save new data in db
+                        setProduct($_POST['productName'],$_POST['catalog'],$_POST['originalPrice'],$_POST['price'],$_POST['creationalDate']->getTimestamp(),$_POST['barcode'], $_POST['btnUpdateProduct']);
+                        header('location: index.php?pg=products');
+                    }
+                }
+                
+                break;
+            case 'del-product':
+                include_once("./model/del_product.php");
+                if(isset($_GET['id-product'])&&$_GET['id-product']){
+                    if(deleteProduct($_GET['id-product'])){
+                        header("location: index.php?pg=products");
+                    }else{
+                        header("location: index.php?pg=products&error=del");
+                    }
+
+                }
                 break;
             case 'report':
                 include_once('./view/report.php');

@@ -163,65 +163,9 @@
   height: auto; /* Cho phép chiều cao tự động tính toán */
   margin-right: 10px; /* Khoảng cách giữa ảnh và tên sản phẩm */
 }
-.product .form-addPro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.product .add-product-form {
-  margin-left: 100px;
-  border: 1px solid black;
-  padding: 100px;
-  width: 800px;
-  border-radius: 20px;
-}
-.product .add-product-form input {
-  position: absolute;
-  border: 1px solid grey;
-  padding: 15px;
-  border-radius: 5px;
-  width: 300px;
-  left: 900px;
-}
-.product .add-product-form .input1 {
-  margin: 40px;
-}
-.product .add-product-form .input1 label {
-  position: absolute;
-  left: 560px;
-}
-.product .add-product-form .title {
-  font-size: 40px;
-  font-weight: bold;
-  position: absolute;
-  top: 150px;
-  left: 720px;
-}
-.product .add-product-form button {
-  position: absolute;
-  top: 540px;
-  left: 890px;
-  padding: 15px;
-  border: none;
-  background-color: #294031;
-  color: white;
-  cursor: pointer;
-  transition: 0.7s;
-  border-radius: 10px;
-}
-
-.product .add-product-form button:hover {
-  background-color: #142118;
-  color: white;
-  scale: 1.1;
-}
 .product .add-product-form .product .add-product-form #addProductForm {
   text-align: center;
 }
-.add-product-form {
-  display: none;
-}
-/*  */
 
 /*  */
 .product .edit-product-form {

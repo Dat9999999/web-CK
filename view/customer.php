@@ -116,7 +116,7 @@ session_start();
             <h2>Thanh toán</h2>
             <form action="index.php?pg=customer" method = "post">
                 <label for="customerPhoneCheckout">Nhập số điện thoại khách hàng:</label>
-                <input type="text" id="customerPhoneCheckout" name="customerPhone" value = "<?php if(isset($_POST['btn-check-customer']) && $_POST['btn-check-customer']) echo $_SESSION['customerPhone'];?>"placeholder="Nhập số điện thoại...">
+                <input type="text" id="customerPhoneCheckout" name="customerPhone" placeholder="Nhập số điện thoại...">
                 <button type = "submit" >Tìm kiếm</button>
                 <input type="hidden" name = "btn-check-customer" value = "submit">
                 <p id="errorMessage" class="error-message"></p>
