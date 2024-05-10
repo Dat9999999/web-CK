@@ -12,7 +12,8 @@ $barcode){
     }
     
     // Prepare SQL statement
-    $sql = "INSERT INTO product (barcode , product_name, original_price, price, catalog, creational_date) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO product (barcode , product_name, original_price, price, catalog, 
+    creational_date) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     
@@ -24,7 +25,8 @@ $barcode){
 
 
     // Bind parameters to statement
-    $stmt->bind_param("ssiisi",$barcode, $productName, $originalPrice,$price,$catalog, $creationalDate);
+    $stmt->bind_param("ssiisi",$barcode, $productName, $originalPrice,
+    $price,$catalog, $creationalDate);
     
     // Execute the statement
     if ($stmt->execute() === TRUE) {

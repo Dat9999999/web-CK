@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/font/fontawesome-free-6.5.1-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-left: 12%;
+            padding-top: 100px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .report {
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .report-timelines,
+        .report-specific,
+        .report-results {
+            margin-bottom: 20px;
+        }
+
+        .timeline-select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .report-timelines {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .report-timelines select,
+        .report-timelines input[type="date"],
+        .report-timelines button {
+            margin-right: 10px;
+        }
+
+        .report-timelines select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .report-timelines input[type="date"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .report-timelines button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .report-timelines button:hover {
+            background-color: #0056b3;
+        }
+
+        .report-results div {
+            margin-bottom: 10px;
+        }
+
+        .report-results h3 {
+            margin-top: 0;
+        }
+
+        .report-frame {
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .report-frame>* {
+            margin-bottom: 15px;
+        }
+
+        .report-results h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        #order-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #order-list th,
+        #order-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #order-list th {
+            background-color: #f2f2f2;
+        }
+
+        #order-list tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #order-list tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Code danh mục báo cáo ở đây-->
+    <div class="container" style="display : flex; justify-content: space-between;">
+        <div class="report">
+            <div class="report-timelines" style="display : flex;">
+                <select id="timeline-select" class="timeline-select">
+                    <option value="today">Hôm nay</option>
+                    <option value="yesterday">Hôm qua</option>
+                    <option value="last-7-days">7 ngày trước</option>
+                    <option value="this-month">Trong tháng</option>
+                </select>
+                <input type="date" id="from-date">
+                <input type="date" id="to-date">
+                <button onclick="viewSpecificPeriod()">Xem chi tiết</button>
+            </div>
+            <div class="report-results">
+                <div class="report-frame">
+                    <h3>Kết quả báo cáo:</h3>
+                    <div id="total-amount">Tổng số tiền:</div>
+                    <div id="total-orders">Tổng số đơn hàng:</div>
+                    <div id="total-products">Tổng số sản phẩm:</div>
+                    <div id="order-list">
+                        <h4>Danh sách đặt hàng:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ngày</th>
+                                    <th>Số tiền</th>
+                                    <th>Số lượng sản phẩm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order-list-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

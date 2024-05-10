@@ -18,6 +18,29 @@ function getCustomer($phone){
     }
     return false;
 }
+function getNumberCustomers(){
+    $sql = "SELECT phone FROM customer";
+    $conn = connect_db();
+
+    $stmt = $conn->prepare($sql);
+    if(!$stmt->execute()){
+        return false;
+    }
+
+    $list_nums = array();
+    $result = $stmt->get_result();
+    if($result->num_rows > 0){
+
+        while($row = $result->fetch_assoc()) {
+            // Thêm thông tin vào mảng 2 chiều
+            $list_nums[] = $row;
+        }
+        $conn->close();
+
+    }
+    return $list_nums;
+}
+
 
 
 

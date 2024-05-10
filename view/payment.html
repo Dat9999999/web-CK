@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/font/fontawesome-free-6.5.1-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./asset/css/home.css">
+    <title>Tìm kiếm sản phẩm</title>
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 160px;
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .search-form input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .search-form input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .search-form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: left;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        table th {
+            background-color: #294031;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        table tr:nth-child(even) td {
+            background-color: #f2f2f2;
+        }
+        table tr:hover td {
+            background-color: #ffedcc;
+        }
+        table td {
+            background-color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            font-weight: bold;
+        }
+        .cart {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+        
+        .cart form {
+            margin-bottom: 20px;
+        }
+        
+        .cart label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .cart input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .cart p {
+            margin: 10px 0;
+        }
+        
+        .cart button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .cart button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="Home">
+        <div class="sidebar">
+            <div class="logo">Quản Lý</div>
+            <div class="menu">
+                <div class="menu-item" id="home">
+                    <i class="fa-solid fa-house"></i>
+                    Trang Chủ
+                </div>
+                <div class="menu-item" id="sanpham">
+                    <i class="fas fa-cube"></i> Sản Phẩm
+                </div>
+                <div class="sub-menu-container" id="sanpham-submenu">
+                    <div class="sub-menu-item">
+                        <a href="./view/product.html">Danh sách sản phẩm</a>
+                    </div>
+                    <div class="sub-menu-item">Danh mục sản phẩm</div>
+                </div>
+                <div class="menu-item" id="khachhang">
+                    <i class="fa-solid fa-user"></i> Khách Hàng
+                </div>
+                <div class="menu-item" id="baocao">
+                    <i class="fa-regular fa-clipboard"></i> Báo Cáo
+                </div>
+                <div class="sub-menu-container" id="baocao-submenu">
+                    <div class="sub-menu-item">Tổng quan báo cáo</div>
+                    <div class="sub-menu-item">Danh Sách Báo Cáo</div>
+                </div>
+                <div class="menu-item" id="quanly">
+                    <i class="fa-solid fa-person-circle-check"></i>
+                    <a href="./view/Nhanvien.html">Quản Lý Nhân Viên</a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="title">
+                <h1>Trang Chủ</h1>
+            </div>
+            <div class="input-wrapper">
+                <button class="icon">
+                    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M22 22L20 20" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <input type="text" name="text" class="input" placeholder="search..">
+            </div>
+        </div>
+    </div>
+    <div class="container"  style = "display : flex; justify-content: space-between;">
+        <div class = "search-product">
+            <h2>Tìm kiếm sản phẩm</h2>
+            <div class="search-form">
+                <input required type="text" id="searchInput" placeholder="Nhập tên sản phẩm hoặc mã sản phẩm">
+                <input required type = "number" min = "1" placeholder="Số lượng">
+                <button onclick="searchProduct()">Tìm kiếm</button>
+            </div>
+            <div class="result" id="searchResult">
+                <table>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá nhập</th>
+                        <th>Giá bán</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2222221111</td>
+                        <td>I phone X</td>
+                        <td>2 cái</td>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>
+                            <button>
+                                <i class="fa-solid fa-x"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1111111111</td>
+                        <td>I phone 15</td>
+                        <td>2 cái</td>
+                        <td>300</td>
+                        <td>600</td>
+                        <td>
+                            <button>
+                                <i class="fa-solid fa-x"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        <div class="cart">
+            <h2>Giỏ hàng</h2>
+
+            <!-- post data to database(order_, order_detail) -->
+            <form action="">
+                <div class="">
+                    <label for="">Số điện thoại:</label>
+                    <input type="text" name="" id="">
+                </div>
+                
+
+                <!-- dynamic data  -->
+                <!-- product1 hidden -->
+
+                <input name = "product_id[]" type="hidden" value = "1">
+                <!-- quantity -->
+                <input  name = "quantity[]"  type="hidden" value = "2">
+                
+                <!-- price -->
+                <input name = "product_id[]"  type="hidden" value = "100">
+                
+                <!-- total-price -->
+                <input name = "product_id[]"  type="hidden" value = "200">
+
+                <!-- product2 hidden -->
+                <!-- quantity -->
+                <input type="hidden" value = "2">
+                
+                <!-- price -->
+                <input type="hidden" value = "300">
+                
+                <!-- total-price -->
+                <input type="hidden" value = "600">
+                <!-- dynamic data  -->
+                <div>
+                    <p>Tổng tiền : 800</p>
+                </div>
+
+                <div class="">
+                    <label for="">
+                        Số tiền khách đưa
+                    </label>
+                    <input type="text" value = "1000">
+                </div>
+
+                <div class="">
+                    <!-- use js to minus paid and total amount -->
+                    <p>
+                        Tiền trả khách: 200
+                    </p>
+                </div>
+            </form>
+            <button>
+                Thu Tiền
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function searchProduct() {
+            var searchTerm = document.getElementById("searchInput").value;
+            // Ở đây bạn có thể thực hiện các hành động tìm kiếm sản phẩm, như truy vấn từ cơ sở dữ liệu hoặc xử lý dữ liệu ở phía máy khách
+            // Đây là một ví dụ đơn giản để hiển thị kết quả tìm kiếm
+            document.getElementById("searchResult").innerText += "Kết quả tìm kiếm cho '" + searchTerm + "'";
+        }
+    </script>
+</body>
+</html>

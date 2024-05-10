@@ -60,4 +60,26 @@ function getOrderDetail($phone){
     }
     return false;
 }
+function getOrderDetailByOrderId($id){
+    $conn = connect_db();
+    $sql = "SELECT order_id,product_name,quantity,price FROM order_detail JOIN product ON order_detail.product_id = product.id
+    WHERE order_id = ? ";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i",$id) ;
+    if(!$stmt->execute()){
+        return false;
+    }
+
+    $arrOrder = array();
+    $result = $stmt->get_result();
+    if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+            $arrOrder[] = $row;
+        }
+        $conn->close();
+        return $arrOrder;
+    }
+    return false;
+}
 ?>

@@ -59,7 +59,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
             case 'add-product':
                 if(isset($_POST['btnAddProduct']) && $_POST['btnAddProduct']){
 
-                    // convert date into timestamp 
+                    // convert timestamp into date 
                     $_POST['creationalDate'] = DateTime::createFromFormat('Y-m-d', $_POST['creationalDate']);
                     if ($_POST['creationalDate'] === false) {
                         die("Incorrect date string");
@@ -99,12 +99,37 @@ if(isset($_SESSION['logged']) && $_SESSION['logged']){
 
                 }
                 break;
-            case 'report':
-                include_once('./view/report.php');
+
+            case 'payment':
+                include_once("./view/payment.php");
                 break;
+            case 'search-product':
+                include_once("./view/search-product.php");
+                break;
+            case 'handle-payment':
+                include_once("./view/handle_payment.php");
+                header("location: ./view/res_payment.php");
+                break;
+            case 'show-invoice':
+                header("location: ./view/show_invoice.php");
+                break;
+            case 'report':
+                if(isset($_GET['order-id']) && $_GET['order-id'] != ""){
+                    $_SESSION['order-id'] = $_GET['order-id'];
+                    include_once("./view/report_detail_order.php");
+                }
+                else{
+                    include_once('./view/report.php');
+                }
+                break;
+            case 'test':
+                header("location: ./model/get_unit_prices.php");
+                break;
+
             case 'info':
                 include_once('./view/info.php');
                 break;
+                
             case 'home':
                 include_once('./view/home.php');
                 break;

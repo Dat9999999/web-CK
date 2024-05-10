@@ -12,98 +12,6 @@ session_start();
     ></script>
     <link rel="stylesheet" href="./view/asset/css/khachhang.css" />
     <!-- JavaScript -->
-    <script>
-      function addInputForm(form){
-        
-        // Input tên sản phẩm
-        var nameLabel = document.createElement("label");
-        nameLabel.textContent = "Tên sản phẩm:";
-        var nameInput = document.createElement("input");
-        nameInput.setAttribute("type", "text");
-        nameInput.required = true;
-        nameInput.setAttribute("name", "product-name[]");
-        nameInput.setAttribute("style", "width:100%");
-
-
-        var divInput = document.createElement("div");
-        divInput.appendChild(nameLabel)
-        divInput.appendChild(nameInput);
-        divInput.setAttribute("style", "width:50%");
-
-
-        form.appendChild(divInput);
-
-    
-        // Input số lượng
-        var divInput = document.createElement("div");
-
-        var quantityLabel = document.createElement("label");
-        quantityLabel.textContent = "Số lượng:";
-        var quantityInput = document.createElement("input");
-        quantityInput.required = true;
-        quantityInput.setAttribute("type", "number");
-        quantityInput.setAttribute("name", "quantity[]");
-        quantityInput.setAttribute("value", "0");
-        quantityInput.setAttribute("min", "0");
-
-
-        quantityInput.setAttribute("style", "width:100%");
-
-        divInput.setAttribute("style", "width:50%");
-        divInput.appendChild(quantityLabel);
-        divInput.appendChild(quantityInput);
-        form.appendChild(divInput);
-
-
-        var addProductButton = document.createElement("button");
-        addProductButton.textContent = "Thêm sản phẩm khác";
-        addProductButton.setAttribute("type","button");
-        addProductButton.setAttribute("class","add-button");
-        addProductButton.setAttribute("style","background-color: #1e2e23;color: white;padding: 10px 20px;font-size: 16px;border: none;cursor: pointer;border-radius: 4px;margin-top: 10px; margin-right :10px;");
-
-        var payProductButton = document.createElement("button");
-        payProductButton.textContent = "Thanh toán";
-        payProductButton.setAttribute("type","submit");
-        payProductButton.setAttribute("class","pay-button");
-        payProductButton.setAttribute("style","background-color: #1e2e23;color: white;padding: 10px 20px;font-size: 16px;border: none;cursor: pointer;border-radius: 4px;margin-top: 10px;");
-
-
-        addProductButton.onclick = ()=>{
-          addInputForm(form);
-          form.removeChild(addProductButton);
-          form.removeChild(payProductButton);
-        };
-        form.appendChild(addProductButton);
-        // nút thanh toán
-        form.appendChild(payProductButton);
-    }
-    function addProductForm() {
-      var formContainer = document.getElementById("form-container");
-      // Tạo form element
-      
-      var form = document.createElement("form");
-      form.setAttribute("id", "product-form");
-      
-      // Thêm input
-      addInputForm(form);
-      var payInput =  document.createElement("input");
-      payInput.setAttribute("type","hidden");
-      payInput.setAttribute("name","pay");
-      form.appendChild(payInput);
-      formContainer.appendChild(form);
-    }
-    function addProductFormNewCus() {
-      // Tạo form element
-      var form = document.getElementById("product-form-new-cus");
-      // Thêm input
-      addInputForm(form);
-      var payInput =  document.createElement("input");
-      payInput.setAttribute("type","hidden");
-      payInput.setAttribute("name","pay");
-      form.appendChild(payInput);
-      formContainer.appendChild(form);
-    }
-    </script>
   </head>
   <body>
     <!-- Home -->
@@ -116,7 +24,7 @@ session_start();
             <h2>Thanh toán</h2>
             <form action="index.php?pg=customer" method = "post">
                 <label for="customerPhoneCheckout">Nhập số điện thoại khách hàng:</label>
-                <input type="text" id="customerPhoneCheckout" name="customerPhone" placeholder="Nhập số điện thoại...">
+                <input required type="text" id="customerPhoneCheckout" value = "<?php if(isset($_GET['phone']) && $_GET['phone']!= "") echo $_GET['phone'];?>" name="customerPhone" placeholder="Nhập số điện thoại...">
                 <button type = "submit" >Tìm kiếm</button>
                 <input type="hidden" name = "btn-check-customer" value = "submit">
                 <p id="errorMessage" class="error-message"></p>
@@ -137,29 +45,20 @@ session_start();
                       <p><strong>Họ và tên:</strong> <span id="customerFullNameDisplay">'.$customer['full_name'].'</span></p>
                       <p><strong>Địa chỉ:</strong> <span id="customerAddressInfoDisplay">'.$customer['address'].'</span></p>
                       <p><strong>Số điện thoại:</strong> <span id="customerPhoneInfoDisplay">'.$customer['phone'].'</span></p>
-                      <button onclick="addProductForm()" style = "background-color: #1e2e23;color: white;padding: 10px 20px;font-size: 16px;border: none;cursor: pointer;border-radius: 4px;margin-top: 10px;">Tạo giao dịch</button>
-                      <div id="form-container"></div>
+                      <button style = "background-color: #1e2e23;color: white;padding: 10px 20px;font-size: 16px;border: none;cursor: pointer;border-radius: 4px;margin-top: 10px;">
+                      <a href = "index.php?pg=payment&phone='.$customer['phone'].'">
+                        Tạo giao dịch
+                      </a>
+                      </button>
                       ';
                     }else{
-                      $formCreateCustomer = '<div style="background-color: #294031; color: white; padding: 20px;width: 50%;margin: auto;">
-                      <h2 style="text-align: center;">Tạo tài khoản khách hàng mới</h2>
-                      <div id = "">
-                      <form action="index.php?pg=customer" id = "product-form-new-cus" method="post">
-                      <div class="form-group">
-                      <label for="full-name" style="margin-bottom: 5px;">Họ và tên:</label>
-                      <input type="text" id="customerFullName" name="customerFullName" required style="width: 100%; padding: 8px; box-sizing: border-box; border-radius: 5px; border: none; margin-bottom: 10px;">
-                      </div>
-                      <div class="form-group">
-                      <label for="address" style="margin-bottom: 5px;">Địa chỉ:</label>
-                      <input type="text" id="customerAddressInfo" id="address" name="address" required style="width: 100%; padding: 8px; box-sizing: border-box; border-radius: 5px; border: none; margin-bottom: 10px;">
-                      </div>
-                      <input type="hidden" name="btn-create-customer" value="submit">
-                      </form>
-                      <script>
-                      addProductFormNewCus();
-                      </script>
-                      </div>
-                      </div>'
+                      $formCreateCustomer = '
+                      <p>Chưa có dữ liệu khách hàng này vui lòng tạo giao dịch</p>
+                      <button type ="button" style = "background-color: #1e2e23;color: white;padding: 10px 20px;font-size: 16px;border: none;cursor: pointer;border-radius: 4px;margin-top: 10px;">
+                        <a href = "index.php?pg=payment&create-cusomer='.$_POST['customerPhone'].'">
+                          Tạo giao dịch
+                        </a>
+                      </button>'
                       ;
                     }
                   }
